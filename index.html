@@ -359,17 +359,17 @@
   </main>
   <div>
     <button type="button" class="card__icon-button-open" onclick="window['dialog'].showModal()"
-      aria-colspan="dialog">
+      >
       <svg class="svg-floppy-small">
-        <use viewBox="0 0 21 21" href="./svg/floppy (2).svg#floppy" />
+        <use href="./svg/floppy (2).svg#floppy" />
       </svg>
       <span class="button__text button__text_save">Сохранить на память</span>
     </button>
     <dialog class="dialog" id="dialog">
-      <div type="button" class="card__icon-button-dialog">
+      <div class="card__icon-button-dialog">
         <div class="mini-box-dialog">
           <svg class="svg-floppy-big">
-            <use viewBox="0 0 39 39" href="./svg/floppy (1).svg#floppy" />
+            <use href="./svg/floppy (1).svg#floppy" />
           </svg>
           <p class="dialog__text">
             Вставьте <br />
@@ -377,7 +377,7 @@
           </p>
         </div>
         <button class="button__text dialog__text__close" onclick="window['dialog'].close()"
-          aria-colspan="dialog">ОК</button>
+          >ОК</button>
       </div>
     </dialog>
   </div>
