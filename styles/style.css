@@ -13,4 +13,429 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-inter), sans-serif;
+  font-variation-settings: 'wght' 400;
+  background-image: var(--background-image);
+  background-size: cover;
+  background-attachment: fixed;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.header {
+  width: var(--clamp-width-cards);
+  background-color: var(--header-background-color);
+  padding-top: clamp(7.625rem, 7.449rem + 0.75vw, 8.125rem);
+  padding-bottom: clamp(7.625rem, 7.449rem + 0.75vw, 8.125rem);
+  padding-left: clamp(1rem, -1.344rem + 10vw, 7.656rem);
+  padding-right: clamp(1rem, -1.344rem + 10vw, 7.656rem);
+  border: var(--border-cards);
+  margin-top: 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 52px;
+}
+
+.header-tittle {
+  font-family: var(--font-press-start), sans-serif;
+  line-height: var(--header-text-line-height);
+  font-size: var(--header-text-clamp);
+}
+
+.header-text {
+  font-family: var(--font-press-start), sans-serif;
+  line-height: var(--header-text-line-height);
+  font-size: var(--header-subtitle-clamp);
+  text-transform: uppercase;
+  padding-top: 20px;
+}
+
+.cards {
+  width: var(--clamp-width-cards);
+  background-color: var(--cards-background-color);
+  border: var(--border-cards);
+  margin-bottom: 52px;
+  display: grid;
+  grid-template-rows: auto auto auto auto;
+}
+
+.tittle-cards {
+  font-family: var(--font-inter);
+  font-size: var(--tittle-text-cards-clamp);
+  line-height: 100%;
+  padding: 4px 10px;
+}
+
+.text-cards {
+  padding-bottom: 25px;
+}
+
+.paragraph {
+  font-family: var(--font-inter);
+  font-size: var(--tittle-text-cards-clamp);
+  line-height: 21px;
+  padding-left: 25px;
+  padding-right: 25px;
+  padding-bottom: 25px;
+}
+
+.box {
+  position: relative;
+  padding-bottom: 27px;
+}
+
+.img-cards {
+  width: var(--img-cards-clamp);
+  height: var(--img-cards-clamp);
+  border-top: var(--border-cards);
+  border-bottom: var(--border-cards);
+  object-fit: cover;
+}
+
+.img-cards-delight {
+  filter: contrast(80%) hue-rotate(35deg);
+}
+
+.img-cards-method {
+  filter: saturate(75%);
+}
+
+.img-cards-patience {
+  filter: brightness(75%) sepia(25%);
+}
+
+.img-cards-freedom {
+  filter: contrast(110%);
+}
+
+.img-cards-support {
+  filter: opacity(85%) contrast(90%);
+}
+
+.img-cards-euphoria {
+  filter: hue-rotate(25deg);
+}
+
+.img-cards-apathy {
+  filter: blur(1px) brightness(80%);
+}
+
+.img-cards-maturity {
+  filter: contrast(130%) saturate(70%);
+}
+
+.box-button-like {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 25px;
+  padding-right: 25px;
+}
+
+.button__text_heart {
+  background-color: var(--cards-buttons-background-color);
+  outline: none;
+  border: none;
+}
+
+.button__text_heart:focus {
+  outline: none;
+  border: none;
+}
+
+.button__text_heart:focus-visible {
+  border: 2px solid black;
+}
+
+.button__text_like {
+  background-color: var(--cards-buttons-background-color);
+  border: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 12px;
+  border: 2px solid black;
+  padding: 9px 17px;
+  width: 138px;
+  height: 38px;
+  outline: none;
+}
+
+.label {
+  font-family: var(--font-press-start), sans-serif;
+  line-height: var(--header-text-line-height);
+  font-size: var(--button-text-cards-clamp);
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  color: var(--label-color);
+  mix-blend-mode: hard-light;
+  text-shadow: 1px 1px 2px white;
+  opacity: 50%;
+}
+
+@supports (text-stroke: 1px) {
+  .label {
+    text-stroke: 1px white;
+  }
+}
+@supports not (text-stroke: 1px) {
+  .label {
+    text-shadow:
+      1px 0 white,
+      -1px 0 white,
+      0 1px white,
+      0 -1px white;
+  }
+} 
+
+.card__icon-button-open {
+  width: clamp(19.125rem, 18.487rem + 2.72vw, 20.938rem);
+  background-color: var(--cards-buttons-background-color);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-top: 17px;
+  padding-bottom: 17px;
+  margin-bottom: 100px;
+}
+
+.svg-floppy-small {
+  width: 21px;
+  height: 21px;
+}
+
+.button__text_save {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-left: 9px;
+}
+
+.button__text {
+  font-family: var(--font-press-start);
+  font-size: var(--button-text-cards-clamp);
+  line-height: 90%;
+}
+
+.dialog__text {
+  font-family: var(--font-press-start);
+  font-size: var(--button-text-cards-clamp);
+  line-height: 150%;
+  text-align: start;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+
+.dialog__text__close {
+  border: var(--border-cards);
+  width: clamp(16.313rem, 15.608rem + 3vw, 18.313rem);
+  height: 38px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-left: 30px;
+  margin-top: 14px;
+}
+
+.svg-floppy-big {
+  width: 39px;
+  height: 39px;
+  margin-right: 20px;
+  margin-left: 30px;
+}
+
+.card__icon-button-dialog {
+  border: none;
+  background-color: var(--cards-buttons-background-color);
+  width: 349px;
+  height: 187px;
+  display: grid;
+  grid-template-rows: auto auto;
+  padding-block: 0;
+  padding-inline: 0;
+}
+
+dialog {
+  border: var(--border-cards);
+  padding: 0;
+  position: fixed;
+  inset: 0;
+  display: none; 
+}
+
+dialog[open] {
+  display: block;
+}
+
+dialog::backdrop {
+  background-color: black;
+  opacity: 75%;
+}
+
+.mini-box-dialog {
+  display: grid;
+  grid-template-columns: auto auto;
+  align-items: center;
+  justify-items: center;
+  padding-top: 11px;
+}
+
+@media (width <= 375px) {
+  .card__icon-button-dialog {
+    width: 337px;
+  }
+
+  .svg-floppy-big {
+    margin-left: 38px;
+  }
+
+  .dialog__text__close {
+    margin-left: 38px;
+  }
+}
+
+.card__like-button {
+  outline: none;
+  transition: box-shadow 0.3s ease; 
+}
+
+.card__icon-button {
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.dialog__text__close {
+  background-color: var(--cards-buttons-background-color);
+  outline: none;
+  transition: box-shadow 0.3s ease;
+}
+
+.button__text_like:focus {
+  box-shadow: 2px 2px 0px black; 
+}
+
+.card__icon-button:focus {
+  box-shadow: 2px 2px 0px black;
+}
+
+.dialog__text__close:focus {
+  box-shadow: 2px 2px 0px black;
+}
+
+.button__text_like,
+.card__icon-button-open,
+.dialog__text__close {
+  position: relative;
+
+}
+
+.button__text_like::before,
+.card__icon-button-open::before,
+.dialog__text__close::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: var(--cards-buttons-hover-background-color);
+  position: absolute;
+  top: 0;
+  left: 0;
+  transform: scaleX(0);
+  transform-origin: center left;
+  transition: transform 0.5s ease-in-out;
+}
+
+.button__text_like:hover::before,
+.card__icon-button-open:hover::before,
+.dialog__text__close:hover::before {
+  transform: scaleX(1);
+  color: white;
+  background-color: white;
+  mix-blend-mode: difference;
+}
+
+
+
+
+.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  animation: sparkle-animation 0.3s ease-in 0.3s;
+}
+
+
+.like-icon .contour {
+  transition: fill 0.1s linear;
+}
+
+.like-icon .core {
+  transition: fill 0.3s linear 0.03s;
+}
+
+.like-icon .main-body {
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .core {
+  fill: var(--core-color-hover);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:hover .main-body {
+  fill: var(--main-color-hover);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon:active .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon:active .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+
+
+
+
+
+
+.like-icon.is-liked .core {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear;
+}
+
+.like-icon.is-liked .contour {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.06s;
+}
+
+.like-icon.is-liked .main-body {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear 0.05s;
+}
+
+.like-icon.is-liked .heart {
+  animation: scale-heart 0.3s ease-in 0.1s forwards;
+}
+
+.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  animation: sparkle-animation 0.3s ease-in 0.3s;
+}
+
+.heart {
+  transform-origin: center;
+}
+
+.sparks {
+  opacity: 0;
 }
