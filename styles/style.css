@@ -167,7 +167,6 @@
   align-items: center;
   width: 130px;
   height: 38px;
-  border: none;
   border: 2px solid black;
   outline: none;
   background-color: var(--cards-buttons-background-color);
@@ -322,12 +321,14 @@ dialog::backdrop {
   transition: box-shadow 0.3s ease;
 }
 
-.card__icon-button-open {
+.card__icon-button-open { 
+  position: relative;
   outline: none;
   transition: box-shadow 0.3s ease;
 }
 
-.dialog__text__close {
+.dialog__text__close { 
+  position: relative;
   outline: none;
   background-color: var(--cards-buttons-background-color);
   transition: box-shadow 0.3s ease;
@@ -345,9 +346,7 @@ dialog::backdrop {
   box-shadow: 2px 2px 0px black;
 }
 
-.button__text_like,
-.card__icon-button-open,
-.dialog__text__close {
+.button__text_like {
   position: relative;
 }
 
@@ -376,10 +375,8 @@ dialog::backdrop {
 }
 
 .like-icon.is-liked .sparks {
-  transition: fill 0.3s linear;
-}
-
-.like-icon.is-liked .sparks {
+  fill: var(--animation-fill-color);
+  transition: fill 0.3s linear; 
   animation: sparkle-animation 0.3s ease-in 0.3s;
 }
 
@@ -432,11 +429,6 @@ dialog::backdrop {
 
 .like-icon.is-liked .heart {
   animation: scale-heart 0.3s ease-in 0.1s forwards;
-}
-
-.like-icon.is-liked .sparks {
-  fill: var(--animation-fill-color);
-  animation: sparkle-animation 0.3s ease-in 0.3s;
 }
 
 .heart {
