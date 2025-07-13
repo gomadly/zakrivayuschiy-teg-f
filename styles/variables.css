@@ -18,7 +18,8 @@
   --cards-buttons-hover-background-color: black;
   --label-color: black;
   --border-cards: 2px solid black; 
-  --img-cards-clamp: clamp(23.188rem, 16.035rem + 30.52vw, 43.5rem);
+  --img-cards-clamp-height: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);
+  --img-cards-clamp-width: clamp(23.188rem, 16.035rem + 30.52vw, 43.5rem);
   --animation-fill-color: #ff0000;
   --contour-color: #000;
   --core-color-hover: #000;

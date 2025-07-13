@@ -26,8 +26,8 @@
 .header {
   width: var(--clamp-width-cards);
   background-color: var(--header-background-color);
-  padding-top: clamp(7.625rem, 7.449rem + 0.75vw, 8.125rem);
-  padding-bottom: clamp(7.625rem, 7.449rem + 0.75vw, 8.125rem);
+  padding-top: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
+  padding-bottom: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
   padding-left: clamp(1rem, -1.344rem + 10vw, 7.656rem);
   padding-right: clamp(1rem, -1.344rem + 10vw, 7.656rem);
   border: var(--border-cards);
@@ -35,13 +35,14 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 52px;
+  margin-bottom: 101px;
 }
 
 .header-tittle {
   font-family: var(--font-press-start), sans-serif;
   line-height: var(--header-text-line-height);
   font-size: var(--header-text-clamp);
+  min-height: 30px;
 }
 
 .header-text {
@@ -56,16 +57,21 @@
   width: var(--clamp-width-cards);
   background-color: var(--cards-background-color);
   border: var(--border-cards);
-  margin-bottom: 52px;
+  margin-bottom: 50px;
   display: grid;
   grid-template-rows: auto auto auto auto;
+}
+
+.cards:last-child {
+  margin-bottom: 0;
 }
 
 .tittle-cards {
   font-family: var(--font-inter);
   font-size: var(--tittle-text-cards-clamp);
-  line-height: 100%;
-  padding: 4px 10px;
+  line-height: 27px;
+  padding: 0 10px;
+  font-variation-settings: 'wght' 715;
 }
 
 .text-cards {
@@ -76,19 +82,19 @@
   font-family: var(--font-inter);
   font-size: var(--tittle-text-cards-clamp);
   line-height: 21px;
-  padding-left: 25px;
+  padding-left: 26px;
   padding-right: 25px;
-  padding-bottom: 25px;
+  padding-bottom: 20px;
 }
 
 .box {
   position: relative;
-  padding-bottom: 27px;
+  padding-bottom: 23px;
 }
 
 .img-cards {
-  width: var(--img-cards-clamp);
-  height: var(--img-cards-clamp);
+  width: var(--img-cards-clamp-width);
+  height: var(--img-cards-clamp-height);
   border-top: var(--border-cards);
   border-bottom: var(--border-cards);
   object-fit: cover;
@@ -136,13 +142,19 @@
 
 .button__text_heart {
   background-color: var(--cards-buttons-background-color);
-  outline: none;
-  border: none;
+  border: 2px solid transparent;
+  transition: border 0.3s ease;
+  cursor: pointer;
+  padding: 0;
+  margin-right: 5px;
+}
+
+.like-icon {
+  padding: 0;
 }
 
 .button__text_heart:focus {
   outline: none;
-  border: none;
 }
 
 .button__text_heart:focus-visible {
@@ -155,12 +167,11 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  margin-left: 12px;
   border: 2px solid black;
-  padding: 9px 17px;
-  width: 138px;
+  width: 130px;
   height: 38px;
   outline: none;
+  cursor: pointer;
 }
 
 .label {
@@ -168,8 +179,8 @@
   line-height: var(--header-text-line-height);
   font-size: var(--button-text-cards-clamp);
   position: absolute;
-  top: 20px;
-  right: 20px;
+  top: 29px;
+  right: 25px;
   color: var(--label-color);
   mix-blend-mode: hard-light;
   text-shadow: 1px 1px 2px white;
@@ -200,6 +211,8 @@
   padding-top: 17px;
   padding-bottom: 17px;
   margin-bottom: 100px;
+  cursor: pointer;
+  margin-top: 45px;
 }
 
 .svg-floppy-small {
@@ -238,6 +251,7 @@
   justify-content: center;
   margin-left: 30px;
   margin-top: 14px;
+  cursor: pointer;
 }
 
 .svg-floppy-big {
@@ -288,12 +302,21 @@ dialog::backdrop {
     width: 337px;
   }
 
+  .box {
+    padding-bottom: 21px;
+  }
+
   .svg-floppy-big {
     margin-left: 38px;
   }
 
   .dialog__text__close {
     margin-left: 38px;
+  }
+
+  .tittle-cards {
+    padding: 1px 10px;
+    line-height: 25px;
   }
 }
 
@@ -302,7 +325,7 @@ dialog::backdrop {
   transition: box-shadow 0.3s ease; 
 }
 
-.card__icon-button {
+.card__icon-button-open {
   outline: none;
   transition: box-shadow 0.3s ease;
 }
@@ -317,7 +340,7 @@ dialog::backdrop {
   box-shadow: 2px 2px 0px black; 
 }
 
-.card__icon-button:focus {
+.card__icon-button-open:focus {
   box-shadow: 2px 2px 0px black;
 }
 
@@ -356,19 +379,13 @@ dialog::backdrop {
   mix-blend-mode: difference;
 }
 
-
-
-
 .like-icon.is-liked .sparks {
-  fill: var(--animation-fill-color);
   transition: fill 0.3s linear;
 }
 
 .like-icon.is-liked .sparks {
-  fill: var(--animation-fill-color);
   animation: sparkle-animation 0.3s ease-in 0.3s;
 }
-
 
 .like-icon .contour {
   transition: fill 0.1s linear;
@@ -401,12 +418,6 @@ dialog::backdrop {
   fill: var(--animation-fill-color);
   transition: fill 0.3s linear 0.05s;
 }
-
-
-
-
-
-
 
 .like-icon.is-liked .core {
   fill: var(--animation-fill-color);
