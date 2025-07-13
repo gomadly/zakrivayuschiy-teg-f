@@ -171,6 +171,7 @@
   outline: none;
   background-color: var(--cards-buttons-background-color);
   cursor: pointer;
+  position: relative;
 }
 
 .label {
@@ -251,6 +252,10 @@
   margin-left: 30px;
   border: var(--border-cards);
   cursor: pointer;
+  position: relative;
+  outline: none;
+  background-color: var(--cards-buttons-background-color);
+  transition: box-shadow 0.3s ease;
 }
 
 .svg-floppy-big {
@@ -324,13 +329,6 @@ dialog::backdrop {
   transition: box-shadow 0.3s ease;
 }
 
-.dialog__text__close {
-  position: relative;
-  outline: none;
-  background-color: var(--cards-buttons-background-color);
-  transition: box-shadow 0.3s ease;
-}
-
 .button__text_like:focus {
   box-shadow: 2px 2px 0px black;
 }
@@ -341,10 +339,6 @@ dialog::backdrop {
 
 .dialog__text__close:focus {
   box-shadow: 2px 2px 0px black;
-}
-
-.button__text_like {
-  position: relative;
 }
 
 .button__text_like::before,
