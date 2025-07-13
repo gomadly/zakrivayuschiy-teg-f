@@ -209,6 +209,9 @@
   padding-bottom: 17px;
   background-color: var(--cards-buttons-background-color);
   cursor: pointer;
+  position: relative;
+  outline: none;
+  transition: box-shadow 0.3s ease;
 }
 
 .svg-floppy-small {
@@ -321,13 +324,7 @@ dialog::backdrop {
   transition: box-shadow 0.3s ease;
 }
 
-.card__icon-button-open { 
-  position: relative;
-  outline: none;
-  transition: box-shadow 0.3s ease;
-}
-
-.dialog__text__close { 
+.dialog__text__close {
   position: relative;
   outline: none;
   background-color: var(--cards-buttons-background-color);
@@ -376,7 +373,7 @@ dialog::backdrop {
 
 .like-icon.is-liked .sparks {
   fill: var(--animation-fill-color);
-  transition: fill 0.3s linear; 
+  transition: fill 0.3s linear;
   animation: sparkle-animation 0.3s ease-in 0.3s;
 }
 
