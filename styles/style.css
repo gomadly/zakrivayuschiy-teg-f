@@ -74,14 +74,14 @@
 }
 
 .paragraph {
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
   padding-right: 25px;
   padding-left: 26px;
   font-family: var(--font-inter), sans-serif;
   font-size: var(--tittle-text-cards-clamp);
   line-height: 21px;
-  display: flex;
-  flex-direction: column;
-  row-gap: 25px;
 }
 
 .quote-cards {
@@ -136,9 +136,9 @@
 .box-button-like {
   display: flex;
   justify-content: flex-end;
+  margin-block-end: 25px;
   padding-right: 25px;
   block-size: 38px;
-  margin-block-end: 25px;
 }
 
 .button__text_heart {
@@ -215,12 +215,12 @@
 }
 
 .dialog__text {
+  padding-right: 40px;
   font-family: var(--font-press-start), sans-serif;
   font-size: var(--button-text-cards-clamp);
   line-height: 150%;
   text-align: start;
   text-transform: uppercase;
-  padding-right: 40px;
 }
 
 .dialog__text__close {
@@ -240,8 +240,8 @@
 
 .card__icon-button-dialog {
   display: grid;
-  width: clamp(20.813rem, 20.46rem + 1.5vw, 21.813rem);
   grid-template-rows: auto auto;
+  width: clamp(20.813rem, 20.46rem + 1.5vw, 21.813rem);
   border: none;
   padding-inline: 0;
   padding-block: 0;
@@ -275,8 +275,8 @@ dialog::backdrop {
 
 @media (width <=375px) {
   .header {
-    padding-bottom: 120px;
     margin-bottom: 100px;
+    padding-bottom: 120px;
   }
 
   .box {
@@ -327,11 +327,11 @@ dialog::backdrop {
   display: flex;
   justify-content: center;
   align-items: center;
-  outline: none;
   border: var(--border-cards);
+  outline: none;
   background-color: var(--cards-buttons-background-color);
-  cursor: pointer;
   transition: box-shadow 0.3s ease;
+  cursor: pointer;
 }
 
 .button__transform:hover::before {
