@@ -1,6 +1,6 @@
 /* В этом файле будут храниться все значения переменных в исходном состоянии, а так же их изменения в зависимости от ширины устройства */
 :root {
-  --font-inter: "Inter";
+  --font-inter: "Inter-Variable";
   --font-press-start: "PressStart2P";
   --font-weight-wght: 400;
   --background-image: repeating-linear-gradient(to bottom,
@@ -17,7 +17,7 @@
   --header-background-color: #ffffff;
   --cards-background-color: #ffffff;
   --cards-buttons-background-color: #ffffff;
-  --cards-buttons-hover-background-color: black;
+  --cards-buttons-hover-background-color: white;
   --label-color: black;
   --border-cards: 2px solid black;
   --img-cards-clamp-height: clamp(23.438rem, 16.285rem + 30.52vw, 43.75rem);

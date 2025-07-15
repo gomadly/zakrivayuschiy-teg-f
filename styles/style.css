@@ -29,7 +29,7 @@
   align-items: center;
   width: var(--clamp-width-cards);
   margin-top: 100px;
-  margin-bottom: 101px;
+  margin-bottom: 98px;
   border: var(--border-cards);
   padding-top: clamp(7.5rem, 7.324rem + 0.75vw, 8rem);
   padding-right: clamp(1rem, -1.344rem + 10vw, 7.656rem);
@@ -39,7 +39,6 @@
 }
 
 .header-tittle {
-  min-height: 30px;
   font-family: var(--font-press-start), sans-serif;
   font-size: var(--header-text-clamp);
   line-height: var(--header-text-line-height);
@@ -68,23 +67,25 @@
 
 .tittle-cards {
   padding: 0 10px;
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), sans-serif;
   font-size: var(--tittle-text-cards-clamp);
   line-height: 27px;
   font-variation-settings: "wght" 715;
 }
 
-.text-cards {
-  padding-bottom: 25px;
-}
-
 .paragraph {
   padding-right: 25px;
-  padding-bottom: 20px;
   padding-left: 26px;
-  font-family: var(--font-inter);
+  font-family: var(--font-inter), sans-serif;
   font-size: var(--tittle-text-cards-clamp);
   line-height: 21px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 25px;
+}
+
+.quote-cards {
+  margin-bottom: 20px;
 }
 
 .box {
@@ -113,7 +114,7 @@
 }
 
 .img-cards-freedom {
-  filter: contrast(110%);
+  filter: contrast(90%);
 }
 
 .img-cards-support {
@@ -135,9 +136,9 @@
 .box-button-like {
   display: flex;
   justify-content: flex-end;
-  align-items: center;
-  margin-bottom: 25px;
   padding-right: 25px;
+  block-size: 38px;
+  margin-block-end: 25px;
 }
 
 .button__text_heart {
@@ -162,16 +163,8 @@
 }
 
 .button__text_like {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: 130px;
   height: 38px;
-  border: 2px solid black;
-  outline: none;
-  background-color: var(--cards-buttons-background-color);
-  cursor: pointer;
-  position: relative;
 }
 
 .label {
@@ -183,36 +176,24 @@
   font-family: var(--font-press-start), sans-serif;
   font-size: var(--button-text-cards-clamp);
   line-height: var(--header-text-line-height);
-  text-shadow: 1px 1px 2px white;
+  text-shadow: 1px 0 white, -1px 0 white, 0 1px white, 0 -1px white;
   mix-blend-mode: hard-light;
 }
 
-@supports (text-stroke: 1px) {
+@supports (text-stroke: 1px) or (-webkit-text-stroke: 1px) {
   .label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px white;
     text-stroke: 1px white;
   }
 }
 
-@supports not (text-stroke: 1px) {
-  .label {
-    text-shadow: 1px 0 white, -1px 0 white, 0 1px white, 0 -1px white;
-  }
-}
-
 .card__icon-button-open {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: clamp(19.125rem, 18.487rem + 2.72vw, 20.938rem);
   margin-top: 45px;
   margin-bottom: 100px;
   padding-top: 17px;
   padding-bottom: 17px;
-  background-color: var(--cards-buttons-background-color);
-  cursor: pointer;
-  position: relative;
-  outline: none;
-  transition: box-shadow 0.3s ease;
 }
 
 .svg-floppy-small {
@@ -228,34 +209,26 @@
 }
 
 .button__text {
-  font-family: var(--font-press-start);
+  font-family: var(--font-press-start), sans-serif;
   font-size: var(--button-text-cards-clamp);
   line-height: 90%;
 }
 
 .dialog__text {
-  margin-top: 2px;
-  font-family: var(--font-press-start);
+  font-family: var(--font-press-start), sans-serif;
   font-size: var(--button-text-cards-clamp);
   line-height: 150%;
   text-align: start;
   text-transform: uppercase;
+  padding-right: 40px;
 }
 
 .dialog__text__close {
-  display: flex;
-  justify-content: center;
-  align-items: center;
   width: clamp(16.313rem, 15.608rem + 3vw, 18.313rem);
-  height: 38px;
-  margin-top: 14px;
-  margin-left: 30px;
-  border: var(--border-cards);
-  cursor: pointer;
-  position: relative;
-  outline: none;
-  background-color: var(--cards-buttons-background-color);
-  transition: box-shadow 0.3s ease;
+  margin-top: 30px;
+  margin-bottom: 28px;
+  margin-left: 32px;
+  padding: 10px 0px;
 }
 
 .svg-floppy-big {
@@ -267,9 +240,8 @@
 
 .card__icon-button-dialog {
   display: grid;
+  width: clamp(20.813rem, 20.46rem + 1.5vw, 21.813rem);
   grid-template-rows: auto auto;
-  width: 349px;
-  height: 187px;
   border: none;
   padding-inline: 0;
   padding-block: 0;
@@ -298,12 +270,13 @@ dialog::backdrop {
   grid-template-columns: auto auto;
   justify-items: center;
   align-items: center;
-  padding-top: 11px;
+  margin-top: 28px;
 }
 
 @media (width <=375px) {
-  .card__icon-button-dialog {
-    width: 337px;
+  .header {
+    padding-bottom: 120px;
+    margin-bottom: 100px;
   }
 
   .box {
@@ -322,6 +295,22 @@ dialog::backdrop {
     padding: 1px 10px;
     line-height: 25px;
   }
+
+  .card__icon-button-open {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 15px;
+  }
+
+  .svg-floppy-small {
+    width: 28px;
+    height: 28px;
+    margin-bottom: 10px;
+  }
+
+  .button__text_save {
+    padding-left: 0px;
+  }
 }
 
 .card__like-button {
@@ -329,21 +318,30 @@ dialog::backdrop {
   transition: box-shadow 0.3s ease;
 }
 
-.button__text_like:focus {
+.button__transform:focus {
   box-shadow: 2px 2px 0px black;
 }
 
-.card__icon-button-open:focus {
-  box-shadow: 2px 2px 0px black;
+.button__transform {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  outline: none;
+  border: var(--border-cards);
+  background-color: var(--cards-buttons-background-color);
+  cursor: pointer;
+  transition: box-shadow 0.3s ease;
 }
 
-.dialog__text__close:focus {
-  box-shadow: 2px 2px 0px black;
+.button__transform:hover::before {
+  color: white;
+  background-color: white;
+  transform: scaleX(1);
+  mix-blend-mode: difference;
 }
 
-.button__text_like::before,
-.card__icon-button-open::before,
-.dialog__text__close::before {
+.button__transform::before {
   content: "";
   position: absolute;
   top: 0;
@@ -354,14 +352,6 @@ dialog::backdrop {
   transition: transform 0.5s ease-in-out;
   transform: scaleX(0);
   transform-origin: center left;
-}
-
-.button__text_like:hover::before,
-.card__icon-button-open:hover::before,
-.dialog__text__close:hover::before {
-  color: white;
-  background-color: white;
-  transform: scaleX(1);
   mix-blend-mode: difference;
 }
 
