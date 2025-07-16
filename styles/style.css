@@ -84,10 +84,6 @@
   line-height: 21px;
 }
 
-.quote-cards {
-  margin-bottom: 20px;
-}
-
 .box {
   position: relative;
   padding-bottom: 23px;
@@ -136,6 +132,7 @@
 .box-button-like {
   display: flex;
   justify-content: flex-end;
+  margin-block-start: 20px;
   margin-block-end: 25px;
   padding-right: 25px;
   block-size: 38px;
